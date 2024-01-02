@@ -28,19 +28,40 @@ SOURCES += \
         widget.cpp \
     ota.cpp \
     compressfactory.cpp \
-    lz4compressor.cpp
+    lz4compressor.cpp \
+    zlibcompressor.cpp \
+    third_party/zlib/adler32.c \
+    third_party/zlib/compress.c \
+    third_party/zlib/crc32.c \
+    third_party/zlib/deflate.c \
+    third_party/zlib/infback.c \
+    third_party/zlib/inffast.c \
+    third_party/zlib/inflate.c \
+    third_party/zlib/inftrees.c \
+    third_party/zlib/trees.c \
+    third_party/zlib/uncompr.c \
+    third_party/zlib/zutil.c
 
 HEADERS += \
         widget.h \
     ota.h \
     compressor.h \
     compressfactory.h \
-    lz4compressor.h
+    lz4compressor.h \
+    zlibcompressor.h \
+    third_party/zlib/crc32.h \
+    third_party/zlib/deflate.h \
+    third_party/zlib/inffast.h \
+    third_party/zlib/inffixed.h \
+    third_party/zlib/inflate.h \
+    third_party/zlib/inftrees.h \
+    third_party/zlib/trees.h \
+    third_party/zlib/zconf.h \
+    third_party/zlib/zlib.h \
+    third_party/zlib/zutil.h
 
 
-win32: LIBS += -L$$PWD/lz4_win32_v1_9_3/static/ -lliblz4_static
+win32: LIBS += -L$$PWD/third_party/lz4/ -lliblz4_static
 
-INCLUDEPATH += $$PWD/lz4_win32_v1_9_3/include
-DEPENDPATH += $$PWD/lz4_win32_v1_9_3/include
-
-win32:!win32-g++: PRE_TARGETDEPS += $$PWD/lz4_win32_v1_9_3/static/liblz4_static.lib
+INCLUDEPATH += $$PWD/third_party/lz4
+DEPENDPATH += $$PWD/third_party/lz4

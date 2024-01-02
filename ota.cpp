@@ -69,7 +69,7 @@ OTA::OTA(QWidget *parent, const compressFactory& factory) : QWidget(parent), com
 
     compressionAlgorithmComboBox = new QComboBox(this);
     compressionAlgorithmComboBox->addItem("LZ4");
-    compressionAlgorithmComboBox->addItem("ZIP");
+    compressionAlgorithmComboBox->addItem("ZLIB");
     compressionAlgorithmComboBox->addItem("FASTLZ");
     layout->addWidget(compressionAlgorithmComboBox);
 
