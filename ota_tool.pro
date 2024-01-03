@@ -27,7 +27,6 @@ SOURCES += \
         main.cpp \
         widget.cpp \
     ota.cpp \
-    compressfactory.cpp \
     lz4compressor.cpp \
     zlibcompressor.cpp \
     third_party/zlib/adler32.c \
